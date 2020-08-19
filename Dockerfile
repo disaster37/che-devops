@@ -104,6 +104,10 @@ RUN \
 # Install Bolt
 RUN yum install -y puppet-bolt-${BOLT_VERSION}
 
+# Install skopeo
+
+RUN yum install -y skopeo
+
 # Clean image
 RUN \
     yum clean all &&\
