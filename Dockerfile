@@ -14,7 +14,9 @@ ENV KUBECTL_VERSION="v1.18.6" \
     BOLT_VERSION="2.22.0" \
     DOCKER_COMPOSE_VERSION="1.26.2" \
     HADOLINT_VERSION="v1.18.0" \
-    PATH=$PATH:/opt/puppetlabs/puppet/bin
+    GRADLE_VERSION="6.6" \
+    GRADLE_HOME="/opt/gradle"\  
+    PATH=$PATH:/opt/puppetlabs/puppet/bin:${GRADLE_HOME}/bin
     
     
 
@@ -56,7 +58,11 @@ RUN \
     chmod +x /usr/bin/envsubst &&\
     echo "hadolint" &&\
     curl -L https://github.com/hadolint/hadolint/releases/download/${HADOLINT_VERSION}/hadolint-Linux-x86_64 -o /usr/bin/hadolint &&\
-    chmod +x /usr/bin/hadolint
+    chmod +x /usr/bin/hadolint &&\
+    echo "gradle" &&\
+    curl -L https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -o /tmp/gradle.zip &&\
+    unzip /tmp/gradle.zip &&\
+    mv /tmp/gradle-* /opt/gradle
     
 # Utils
 RUN \
@@ -105,8 +111,11 @@ RUN \
 RUN yum install -y puppet-bolt-${BOLT_VERSION}
 
 # Install skopeo
-
 RUN yum install -y skopeo
+
+# Install Java for gradle
+RUN yum install -y java-1.8.0-openjdk-devel &&\
+
 
 # Clean image
 RUN \
