@@ -114,7 +114,7 @@ RUN yum install -y puppet-bolt-${BOLT_VERSION}
 RUN yum install -y skopeo
 
 # Install Java for gradle
-RUN yum install -y java-1.8.0-openjdk-devel &&\
+RUN yum install -y java-1.8.0-openjdk-devel
 
 
 # Clean image
