@@ -16,7 +16,7 @@ ENV KUBECTL_VERSION="v1.18.6" \
     HADOLINT_VERSION="v1.18.0" \
     GRADLE_VERSION="6.6" \
     GRADLE_HOME="/opt/gradle"\  
-    PATH=$PATH:/opt/puppetlabs/puppet/bin:${GRADLE_HOME}/bin
+    PATH=$PATH:/opt/puppetlabs/puppet/bin:/opt/gradle/bin
     
     
 
