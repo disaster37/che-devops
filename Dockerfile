@@ -36,17 +36,17 @@ RUN \
     mv vault /usr/bin/vault &&\
     chmod +x /usr/bin/vault &&\
     echo "terraform 11" &&\
-    curl -L https://releases.hashicorp.com/terraform/${TERRAFORM_11_VERSION}/terraform_${TERRAFORM_11_VERSION}_linux_386.zip -o /tmp/terraform_11.zip &&\
+    curl -L https://releases.hashicorp.com/terraform/${TERRAFORM_11_VERSION}/terraform_${TERRAFORM_11_VERSION}_linux_amd64.zip -o /tmp/terraform_11.zip &&\
     unzip /tmp/terraform_11.zip &&\
     mv terraform /usr/bin/terraform_11 &&\
     chmod +x /usr/bin/terraform_11 &&\
     echo "terraform 12" &&\
-    curl -L https://releases.hashicorp.com/terraform/${TERRAFORM_12_VERSION}/terraform_${TERRAFORM_12_VERSION}_linux_386.zip -o /tmp/terraform_12.zip &&\
+    curl -L https://releases.hashicorp.com/terraform/${TERRAFORM_12_VERSION}/terraform_${TERRAFORM_12_VERSION}_linux_amd64.zip -o /tmp/terraform_12.zip &&\
     unzip /tmp/terraform_12.zip &&\
     mv terraform /usr/bin/terraform_12 &&\
     chmod +x /usr/bin/terraform_12 &&\
     echo "terraform 13" &&\
-    curl -L https://releases.hashicorp.com/terraform/${TERRAFORM_13_VERSION}/terraform_${TERRAFORM_13_VERSION}_linux_386.zip -o /tmp/terraform_13.zip &&\
+    curl -L https://releases.hashicorp.com/terraform/${TERRAFORM_13_VERSION}/terraform_${TERRAFORM_13_VERSION}_linux_amd64.zip -o /tmp/terraform_13.zip &&\
     unzip /tmp/terraform_13.zip &&\
     mv terraform /usr/bin/terraform_13 &&\
     chmod +x /usr/bin/terraform_13 &&\
