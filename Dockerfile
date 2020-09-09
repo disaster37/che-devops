@@ -66,7 +66,7 @@ RUN \
     unzip /tmp/gradle.zip &&\
     mv /tmp/gradle-* /opt/gradle &&\
     echo "helm" &&\
-    curl -L https://get.helm.sh/helm-${HELM_VERSION]-linux-amd64.tar.gz -o /tmp/helm.tar.gz &&\
+    curl -L https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -o /tmp/helm.tar.gz &&\
     tar -xvzf /tmp/helm.tar.gz &&\
     mv /tmp/linux-amd64/helm /usr/bin/helm &&\
     echo "rancher2" &&\
