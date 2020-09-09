@@ -15,6 +15,8 @@ ENV KUBECTL_VERSION="v1.18.6" \
     DOCKER_COMPOSE_VERSION="1.26.2" \
     HADOLINT_VERSION="v1.18.0" \
     GRADLE_VERSION="6.6" \
+    HELM_VERSION="v3.3.1" \
+    RANCHER_VERSION="v2.4.6" \
     GRADLE_HOME="/opt/gradle"\  
     PATH=$PATH:/opt/puppetlabs/puppet/bin:/opt/gradle/bin
     
@@ -62,7 +64,15 @@ RUN \
     echo "gradle" &&\
     curl -L https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -o /tmp/gradle.zip &&\
     unzip /tmp/gradle.zip &&\
-    mv /tmp/gradle-* /opt/gradle
+    mv /tmp/gradle-* /opt/gradle &&\
+    echo "helm" &&\
+    curl -L https://get.helm.sh/helm-${HELM_VERSION]-linux-amd64.tar.gz -o /tmp/helm.tar.gz &&\
+    tar -xvzf /tmp/helm.tar.gz &&\
+    mv /tmp/linux-amd64/helm /usr/bin/helm &&\
+    echo "rancher2" &&\
+    curl -L https://github.com/rancher/cli/releases/download/${RANCHER_VERSION}/rancher-linux-amd64-${RANCHER_VERSION}.tar.gz -o /tmp/rancher.tar.gz &&\
+    tar -xvzf /tmp/rancher.tar.gz &&\
+    mv /tmp/rancher-*/rancher /usr/bin/rancher
     
 # Utils
 RUN \
