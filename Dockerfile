@@ -8,6 +8,7 @@ ENV KUBECTL_VERSION="v1.18.6" \
     TERRAFORM_11_VERSION="0.11.14" \
     TERRAFORM_12_VERSION="0.12.29" \
     TERRAFORM_13_VERSION="0.13.5" \
+    TERRAFORM_14_VERSION="0.14.3" \
     TERRAGRUNT_VERSION="v0.26.7" \
     ENVSUBST_VERSION="v1.2.0" \
     PUPPET_VERSION="5.5.21" \
@@ -52,6 +53,11 @@ RUN \
     unzip /tmp/terraform_13.zip &&\
     mv terraform /usr/bin/terraform_13 &&\
     chmod +x /usr/bin/terraform_13 &&\
+    echo "terraform 14" &&\
+    curl -L https://releases.hashicorp.com/terraform/${TERRAFORM_14_VERSION}/terraform_${TERRAFORM_14_VERSION}_linux_amd64.zip -o /tmp/terraform_14.zip &&\
+    unzip /tmp/terraform_14.zip &&\
+    mv terraform /usr/bin/terraform_14 &&\
+    chmod +x /usr/bin/terraform_14 &&\
     echo "terragrunt" &&\
     curl -L https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT_VERSION}/terragrunt_linux_amd64 -o /usr/bin/terragrunt &&\
     chmod +x /usr/bin/terragrunt &&\
