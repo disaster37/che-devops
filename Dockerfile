@@ -11,7 +11,7 @@ ENV KUBECTL_VERSION="v1.18.6" \
     TERRAFORM_14_VERSION="0.14.3" \
     TERRAGRUNT_VERSION="v0.26.7" \
     ENVSUBST_VERSION="v1.2.0" \
-    PUPPET_VERSION="5.5.21" \
+    PUPPET_VERSION="6.17.0" \
     BOLT_VERSION="2.22.0" \
     DOCKER_COMPOSE_VERSION="1.26.2" \
     HADOLINT_VERSION="v1.18.0" \
@@ -104,7 +104,7 @@ RUN \
     
 # Puppet
 RUN \
-    rpm -Uvh https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm &&\
+    rpm -Uvh https://yum.puppet.com/puppet6/puppet6-release-el-7.noarch.rpm &&\
     yum install -y gcc-c++ libxml2 libxml2-devel libxslt-devel zlib-devel pdk puppet-agent-${PUPPET_VERSION}
 RUN \
     /opt/puppetlabs/puppet/bin/gem install rspec  &&\
