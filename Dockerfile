@@ -19,7 +19,7 @@ ENV KUBECTL_VERSION="v1.18.6" \
     HELM_VERSION="v3.3.1" \
     RANCHER_VERSION="v2.4.6" \
     GRADLE_HOME="/opt/gradle"\  
-    PATH=$PATH:/opt/puppetlabs/puppet/bin:/opt/gradle/bin
+    PATH=/opt/puppetlabs/puppet/bin:/opt/gradle/bin:$PATH
     
     
 
