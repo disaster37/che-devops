@@ -109,19 +109,22 @@ RUN \
 RUN \
     /opt/puppetlabs/puppet/bin/gem install rspec  &&\
     /opt/puppetlabs/puppet/bin/gem install rspec-puppet &&\
+    /opt/puppetlabs/puppet/bin/gem install pathspec -v 0.2.1 &&\ #Need to support ruby 2.5.0
     /opt/puppetlabs/puppet/bin/gem install puppetlabs_spec_helper &&\
     /opt/puppetlabs/puppet/bin/gem install puppet-lint &&\
     /opt/puppetlabs/puppet/bin/gem install r10k &&\
     /opt/puppetlabs/puppet/bin/gem install nokogiri -- --use-system-libraries=true --with-xml2-include=/usr/include/libxml2 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker -v 4.0.0 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker-puppet -v 1.1.0 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker-puppet_install_helper -v 0.9.7 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker-pe -v 2.0.6 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker-module_install_helper -v 0.1.7 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker-task_helper -v 1.7.2 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker-rspec -v 6.2.4 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker-docker -v 0.5.1 &&\
-    /opt/puppetlabs/puppet/bin/gem install beaker-hiera -v 0.1.1
+    /opt/puppetlabs/puppet/bin/gem install beaker &&\
+    /opt/puppetlabs/puppet/bin/gem install beaker-puppet &&\
+    /opt/puppetlabs/puppet/bin/gem install beaker-puppet_install_helper &&\
+    /opt/puppetlabs/puppet/bin/gem install beaker-pe &&\
+    /opt/puppetlabs/puppet/bin/gem install beaker-module_install_helper &&\
+    /opt/puppetlabs/puppet/bin/gem install beaker-task_helper &&\
+    /opt/puppetlabs/puppet/bin/gem install beaker-rspec &&\
+    /opt/puppetlabs/puppet/bin/gem install beaker-docker &&\
+    /opt/puppetlabs/puppet/bin/gem install beaker-hiera
+COPY patch/module_install_helper.rb /opt/puppetlabs/puppet/lib/ruby/gems/2.5.0/gems/beaker-module_install_helper-0.1.7/lib/beaker/module_install_helper.rb
+COPY hiera.yaml /etc/puppetlabs/puppet/hiera.yaml
 
 # Install Bolt
 RUN yum install -y puppet-bolt-${BOLT_VERSION}
