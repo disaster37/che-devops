@@ -109,7 +109,7 @@ RUN \
 RUN \
     /opt/puppetlabs/puppet/bin/gem install rspec  &&\
     /opt/puppetlabs/puppet/bin/gem install rspec-puppet &&\
-    /opt/puppetlabs/puppet/bin/gem install pathspec -v 0.2.1 &&\ #Need to support ruby 2.5.0
+    /opt/puppetlabs/puppet/bin/gem install pathspec -v 0.2.1 &&\
     /opt/puppetlabs/puppet/bin/gem install puppetlabs_spec_helper &&\
     /opt/puppetlabs/puppet/bin/gem install puppet-lint &&\
     /opt/puppetlabs/puppet/bin/gem install r10k &&\
