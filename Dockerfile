@@ -16,10 +16,11 @@ ENV KUBECTL_VERSION="v1.18.6" \
     DOCKER_COMPOSE_VERSION="1.26.2" \
     HADOLINT_VERSION="v1.18.0" \
     GRADLE_VERSION="6.6" \
-    HELM_VERSION="v3.3.1" \
+    HELM_VERSION="v3.5.0" \
     RANCHER_VERSION="v2.4.6" \
     GRADLE_HOME="/opt/gradle"\  
-    PATH=/opt/puppetlabs/puppet/bin:/opt/gradle/bin:$PATH
+    PATH=/opt/puppetlabs/puppet/bin:/opt/gradle/bin:$PATH\
+    PDK_DISABLE_ANALYTICS=true
     
     
 
