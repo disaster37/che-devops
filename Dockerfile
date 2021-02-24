@@ -139,6 +139,7 @@ RUN yum install -y java-1.8.0-openjdk-devel
 # Install Openshift CLI
 COPY oc.tar /tmp/oc.tar
 RUN \
+    cd /tmp &&\
     tar -xvf /tmp/oc.tar &&\
     mv /tmp/oc /usr/bin/oc
 
