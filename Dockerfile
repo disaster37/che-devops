@@ -136,6 +136,12 @@ RUN yum install -y skopeo
 # Install Java for gradle
 RUN yum install -y java-1.8.0-openjdk-devel
 
+# Install Openshift CLI
+COPY oc.tar /tmp/oc.tar
+RUN \
+    tar -xvf /tmp/oc.tar &&\
+    mv /tmp/oc /usr/bin/oc
+
 
 # Clean image
 RUN \
